@@ -373,11 +373,8 @@
 	"NativeScript Stack Layout" : {
 		"prefix" : "nsstacklayout",
 		"body" : [
-			"<StackLayout orientation=\"vertical\" width=\"210\" height=\"210\" backgroundColor=\"lightgray\">",
-				"\t<Label text=\"Label 1\" width=\"70\" height=\"50\" backgroundColor=\"red\" />",
-				"\t<Label text=\"Label 2\" width=\"70\" height=\"50\" backgroundColor=\"green\" />",
-				"\t<Label text=\"Label 3\" width=\"70\" height=\"50\" backgroundColor=\"blue\" />",
-				"\t<Label text=\"Label 4\" width=\"70\" height=\"50\" backgroundColor=\"yellow\" />",
+			"<StackLayout orientation=\"vertical\" width=\"100%\" height=\"auto\">",
+				"\t$1",
 			"</StackLayout>",
 		]
 	},

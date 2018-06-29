@@ -452,88 +452,10 @@
 			"},",
 		]
 	},
-	"NativeScript " : {
-		"prefix" : "",
+	"NativeScript Calendar" : {
+		"prefix" : "nsxcalendar",
 		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
-		]
-	},
-	"NativeScript " : {
-		"prefix" : "",
-		"body" : [
-			
+			"require(\"nativescript-vue\").registerElement(\"RadCalendar\", () => require(\"nativescript-ui-calendar\").RadCalendar);"
 		]
 	},
 }
