@@ -1,0 +1,539 @@
+{
+/*
+	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Socket.io Server" : {
+		"prefix" : "~socket",
+		"body" : [
+			"var app = require(\"express\")();",
+			"var http = require(\"http\").Server(app);",
+			"var io = require(\"socket.io\")(http);",
+			"",
+			"http.listen($port,function(){",
+				"\tconsole.log(\"server is running at port $port\");",
+			"});",
+			"",
+			"io.on(\"connection\",function(socket){",
+				"\t$events",
+			"});"
+		]
+	},
+	
+
+	"Vue Instance" : {
+		"prefix" : "vue-instance",
+		"body" : [
+			"var $app = new Vue({",
+				"\tel : \"$selector\",",
+				"\tdata : {",
+					"\t\t$data",
+				"\t},",
+				"\tmethods : {",
+					"\t\t$methods",
+				"\t},",
+				"\twatch : {",
+					"\t\t$watch",
+				"\t},",
+				"\tcomputed : {",
+					"\t\t$computed",
+				"\t}",
+			"});"
+		]
+	},
+
+	"Closure" : {
+		"prefix" : "fn",
+		"body" : [
+			"function(){",
+				"\t$1",
+			"}"
+		]
+	},
+	"Blade Show Detail" : {
+		"prefix" : "~detail",
+		"body" : [
+			"<li class=\"list-group-item\">",
+				"\t<div class=\"list-group-item-text\">",
+					"\t\t<div class=\"row\">",
+						"\t\t\t<div class=\"col-lg-6\">$1</div>",
+						"\t\t\t<div class=\"col-lg-6\">{{$2}}</div>",
+					"\t\t</div>",
+				"\t</div>",
+			"</li>"
+		]
+	},
+
+	"NativeScript ListView Script " : {
+		"prefix" : "nsxlistview",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tcountries: [",
+						"\t\t\t{ name: \"Australia\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/au.png\" },",
+						"\t\t\t{ name: \"Belgium\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/be.png\" },",
+						"\t\t\t{ name: \"Bulgaria\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/bg.png\" },",
+						"\t\t\t{ name: \"Canada\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/ca.png\" },",
+						"\t\t\t{ name: \"Switzerland\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/ch.png\" },",
+						"\t\t\t{ name: \"China\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/cn.png\" },",
+						"\t\t\t{ name: \"Czech Republic\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/cz.png\" },",
+						"\t\t\t{ name: \"Germany\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/de.png\" },",
+						"\t\t\t{ name: \"Spain\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/es.png\" },",
+						"\t\t\t{ name: \"Ethiopia\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/et.png\" },",
+						"\t\t\t{ name: \"Croatia\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/hr.png\" },",
+						"\t\t\t{ name: \"Hungary\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/hu.png\" },",
+						"\t\t\t{ name: \"Italy\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/it.png\" },",
+						"\t\t\t{ name: \"Jamaica\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/jm.png\" },",
+						"\t\t\t{ name: \"Romania\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/ro.png\" },",
+						"\t\t\t{ name: \"Russia\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/ru.png\" },",
+						"\t\t\t{ name: \"United States\", imageSrc: \"https://play.nativescript.org/dist/assets/img/flags/us.png\" },",
+					"\t\t],",
+				"\t}",
+			"},",
+			"methods: {",
+				"\tonItemTap: function (args) {",
+					"\t\tconsole.log('Item with index: ' + args.index + ' tapped');",
+				"\t},",
+			"},",
+		]
+	},
+
+	"NativeScript Date Picker" : {
+		"prefix" : "nsxdatepicker",
+		"body" : [
+			"data() {",
+				"\treturn {",
+				  "\t\tcurrentHour: new Date().getHours(),",
+				  "\t\tcurrentMinute: new Date().getMinutes(),",
+				"\t}",
+			  "},",
+		]
+	},
+	"NativeScript Autocomplete Text View" : {
+		"prefix" : "nsxautocomplete",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tautocompleteCountries: new ObservableArray([",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Australia\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Belgium\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Bulgaria\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Canada\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Switzerland\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"China\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Czech Republic\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Germany\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Spain\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Ethiopia\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Croatia\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Hungary\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Italy\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Jamaica\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Romania\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"Russia\", undefined),",
+						"\t\t\tnew autocompleteModule.TokenModel(\"United States\", undefined)",
+					"\t\t]),",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript List Picker" : {
+		"prefix" : "nsxlistpicker",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tlistPickerCountries: [\"Australia\", \"Belgium\", \"Bulgaria\", \"Canada\", \"Switzerland\",",
+					"\t\t\"China\", \"Czech Republic\", \"Germany\", \"Spain\", \"Ethiopia\", \"Croatia\", \"Hungary\",",
+					"\t\t\"Italy\", \"Jamaica\", \"Romania\", \"Russia\", \"United States\"],",
+					"\t\tselectedListPickerIndex: number = 0,",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Data Form" : {
+		"prefix" : "nsxdataform",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\talbum: {",
+						"\t\t\tbandName: \"Ed Sheeran\",",
+						"\t\t\talbumName: \"X\",",
+						"\t\t\tyear: \"2017\",",
+						"\t\t\towned: true,",
+						"\t\t\tmyRating: \"9.5\"",
+					"\t\t},",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Segmented Bar" : {
+		"prefix" : "nsxsegmentedbar",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tsegmentedBarItems: function () {",
+						"\t\t\tvar segmentedBarModule = require(\"ui/segmented-bar\");",
+						"\t\t\tlet segmentedBarItem1 = new segmentedBarModule.SegmentedBarItem();",
+						"\t\t\tsegmentedBarItem1.title = \"Item 1\";",
+						"\t\t\tlet segmentedBarItem2 = new segmentedBarModule.SegmentedBarItem();",
+						"\t\t\tsegmentedBarItem2.title = \"Item 2\";",
+						"\t\t\treturn [segmentedBarItem1, segmentedBarItem2];",
+					"\t\t}(),",
+					"\t\tselectedBarIndex: 0,",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Search Bar" : {
+		"prefix" : "nsxsearchbar",
+		"body" : [
+			"methods: {",
+				"\tonSearchSubmit(args) {",
+					"\t\tlet searchBar = args.object;",
+					"\t\tconsole.log(\"You are searching for \" + searchBar.text);",
+				"\t},",
+			"},",
+			"data() {",
+				"\treturn {",
+					"\t\tsearchPhrase: \"\",",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Area Chart" : {
+		"prefix" : "nsxareachart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tareaSource: [",
+						"\t\t\t{ Category: \"Mar\", Amount: 51 },",
+						"\t\t\t{ Category: \"Apr\", Amount: 81 },",
+						"\t\t\t{ Category: \"May\", Amount: 89 },",
+						"\t\t\t{ Category: \"Jun\", Amount: 97 }",
+					"\t\t],",
+					"\t\tareaSource2: [",
+						"\t\t\t{ Category: \"Mar\", Amount: 60 },",
+						"\t\t\t{ Category: \"Apr\", Amount: 87 },",
+						"\t\t\t{ Category: \"May\", Amount: 91 },",
+						"\t\t\t{ Category: \"Jun\", Amount: 95 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Bar Chart" : {
+		"prefix" : "nsxbarchart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tcategoricalSource: [",
+						"\t\t\t{ Country: \"Germany\", Amount: 15, SecondVal: 14, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"France\", Amount: 13, SecondVal: 23, ThirdVal: 25 },",
+						"\t\t\t{ Country: \"Bulgaria\", Amount: 24, SecondVal: 17, ThirdVal: 23 },",
+						"\t\t\t{ Country: \"Spain\", Amount: 11, SecondVal: 19, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"USA\", Amount: 18, SecondVal: 8, ThirdVal: 21 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Line Chart" : {
+		"prefix" : "nsxlinechart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tcategoricalSource: [",
+						"\t\t\t{ Country: \"Germany\", Amount: 15, SecondVal: 14, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"France\", Amount: 13, SecondVal: 23, ThirdVal: 25 },",
+						"\t\t\t{ Country: \"Bulgaria\", Amount: 24, SecondVal: 17, ThirdVal: 23 },",
+						"\t\t\t{ Country: \"Spain\", Amount: 11, SecondVal: 19, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"USA\", Amount: 18, SecondVal: 8, ThirdVal: 21 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Bubble Chart" : {
+		"prefix" : "nsxbubblechart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\thighDataModel: [",
+						"\t\t\t{ Year: 2000, Amount: 15, Impact: 1 },",
+						"\t\t\t{ Year: 1456, Amount: 13, Impact: 7 },",
+						"\t\t\t{ Year: 1866, Amount: 25, Impact: 10 },",
+						"\t\t\t{ Year: 1900, Amount: 5, Impact: 3 },",
+						"\t\t\t{ Year: 1700, Amount: 17, Impact: 4 },",
+						"\t\t\t{ Year: 1600, Amount: 20, Impact: 1 }",
+					"\t\t],",
+					"\t\tmiddleDataModel: [",
+						"\t\t\t{ Year: 1200, Amount: 15, Impact: 1 },",
+						"\t\t\t{ Year: 1156, Amount: 13, Impact: 7 },",
+						"\t\t\t{ Year: 1000, Amount: 25, Impact: 10 },",
+						"\t\t\t{ Year: 900, Amount: 5, Impact: 3 },",
+						"\t\t\t{ Year: 700, Amount: 17, Impact: 4 },",
+						"\t\t\t{ Year: 600, Amount: 20, Impact: 1 },",
+					"\t\t],",
+					"\t\tlowDataModel: [",
+						"\t\t\t{ Year: 200, Amount: 15, Impact: 1 },",
+						"\t\t\t{ Year: 456, Amount: 13, Impact: 7 },",
+						"\t\t\t{ Year: 366, Amount: 25, Impact: 10 },",
+						"\t\t\t{ Year: 100, Amount: 5, Impact: 3 },",
+						"\t\t\t{ Year: 340, Amount: 17, Impact: 4 },",
+						"\t\t\t{ Year: 135, Amount: 20, Impact: 1 },",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript CandleStick Chart" : {
+		"prefix" : "nsxcandlestick",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tfinancialSourceItems: [",
+						"\t\t\t{ Date: \"01/6/2015\", Open: 100, Close: 85, Low: 50, High: 139 },",
+						"\t\t\t{ Date: \"27/7/2015\", Open: 60, Close: 150, Low: 40, High: 159 },",
+						"\t\t\t{ Date: \"18/8/2015\", Open: 120, Close: 81, Low: 45, High: 141 },",
+						"\t\t\t{ Date: \"19/9/2015\", Open: 105, Close: 200, Low: 55, High: 250 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript OHLC Chart" : {
+		"prefix" : "nsxohlc",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tfinancialSourceItems: [",
+						"\t\t\t{ Date: \"01/6/2015\", Open: 100, Close: 85, Low: 50, High: 139 },",
+						"\t\t\t{ Date: \"27/7/2015\", Open: 60, Close: 150, Low: 40, High: 159 },",
+						"\t\t\t{ Date: \"18/8/2015\", Open: 120, Close: 81, Low: 45, High: 141 },",
+						"\t\t\t{ Date: \"19/9/2015\", Open: 105, Close: 200, Low: 55, High: 250 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Pie Chart" : {
+		"prefix" : "nsxpiechart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tpieSource: [",
+						"\t\t\t{ Brand: \"Audi\", Amount: 10 },",
+						"\t\t\t{ Brand: \"Mercedes\", Amount: 76 },",
+						"\t\t\t{ Brand: \"Fiat\", Amount: 60 },",
+						"\t\t\t{ Brand: \"BMW\", Amount: 24 },",
+						"\t\t\t{ Brand: \"Crysler\", Amount: 40 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Donut Chart" : {
+		"prefix" : "nsxdonutchart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tpieSource: [",
+						"\t\t\t{ Brand: \"Audi\", Amount: 10 },",
+						"\t\t\t{ Brand: \"Mercedes\", Amount: 76 },",
+						"\t\t\t{ Brand: \"Fiat\", Amount: 60 },",
+						"\t\t\t{ Brand: \"BMW\", Amount: 24 },",
+						"\t\t\t{ Brand: \"Crysler\", Amount: 40 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Scatter Chart" : {
+		"prefix" : "nsxscatterchart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tscatterSource: [",
+						"\t\t\t{ Age: 20, Salary: 10000, Spendings: 4500, Savings: 5500, Impact: 1 },",
+						"\t\t\t{ Age: 25, Salary: 12300, Spendings: 6500, Savings: 5200, Impact: 7 },",
+						"\t\t\t{ Age: 30, Salary: 14000, Spendings: 8500, Savings: 5500, Impact: 10 },",
+						"\t\t\t{ Age: 35, Salary: 18000, Spendings: 9500, Savings: 7500, Impact: 6 },",
+						"\t\t\t{ Age: 40, Salary: 19520, Spendings: 15540, Savings: 3800, Impact: 4 },",
+						"\t\t\t{ Age: 45, Salary: 20000, Spendings: 15500, Savings: 4500, Impact: 2 },",
+						"\t\t\t{ Age: 50, Salary: 24200, Spendings: 20500, Savings: 3700, Impact: 11 },",
+						"\t\t\t{ Age: 55, Salary: 24000, Spendings: 22500, Savings: 1500, Impact: 8 },",
+						"\t\t\t{ Age: 60, Salary: 22000, Spendings: 22500, Savings: 500, Impact: 1 },",
+						"\t\t\t{ Age: 65, Salary: 20000, Spendings: 20500, Savings: 10, Impact: 9 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Spline Chart" : {
+		"prefix" : "nsxsplinechart",
+		"body" : [
+			"data() {",
+				"\treturn {",
+					"\t\tcategoricalSource: [",
+						"\t\t\t{ Country: \"Germany\", Amount: 15, SecondVal: 14, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"France\", Amount: 13, SecondVal: 23, ThirdVal: 25 },",
+						"\t\t\t{ Country: \"Bulgaria\", Amount: 24, SecondVal: 17, ThirdVal: 23 },",
+						"\t\t\t{ Country: \"Spain\", Amount: 11, SecondVal: 19, ThirdVal: 24 },",
+						"\t\t\t{ Country: \"USA\", Amount: 18, SecondVal: 8, ThirdVal: 21 }",
+					"\t\t],",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Slide Drawer" : {
+		"prefix" : "nsxslidedrawer",
+		"body" : [
+			"methods: {",
+				"\tonOpenDrawerTap() {",
+					"\t\tthis.$refs.drawer.nativeView.showDrawer();",
+				"\t},",
+				"\tonCloseDrawerTap() {",
+					"\t\tthis.$refs.drawer.nativeView.closeDrawer();",
+				"\t},",
+			"},",
+			"data() {",
+				"\treturn {",
+					"\t\tmainContentText: \"SideDrawer for NativeScript can be easily setup in the XML definition of your page by defining main- and drawer-content. The component\"",
+					"\t\t+ \" has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.\",",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript Location" : {
+		"prefix" : "nsxlocation",
+		"body" : [
+			"methods: {",
+				"\tenableLocationServices: function () {",
+					"\t\tgeoLocation.isEnabled().then(enabled => {",
+						"\t\t\tif (!enabled) {",
+							"\t\t\t\tgeoLocation.enableLocationRequest().then(() => this.showLocation());",
+						"\t\t\t} else {",
+							"\t\t\t\tthis.showLocation();",
+						"\t\t\t}",
+					"\t\t});",
+				"\t},",
+				"\tshowLocation: function () {",
+					"\t\tgeoLocation.watchLocation(location => {",
+					"\t\tthis.currentGeoLocation = location;",
+					"\t\t}, error => {",
+						"\t\t\talert(error);",
+					"\t\t}, {",
+						"\t\t\tdesiredAccuracy: 3,",
+						"\t\t\tupdateDistance: 10,",
+						"\t\t\tminimumUpdateTime: 1000 * 1",
+					"\t\t});",
+				"\t},",
+			"},",
+			"data() {",
+				"\treturn {",
+					"\t\tcurrentGeoLocation: {",
+						"\t\t\tlatitude: null,",
+						"\t\t\tlongitude: null,",
+						"\t\t\taltitude: null,",
+						"\t\t\tdirection: null",
+					"\t\t},",
+				"\t}",
+			"},",
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+	"NativeScript " : {
+		"prefix" : "",
+		"body" : [
+			
+		]
+	},
+}

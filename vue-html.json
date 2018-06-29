@@ -1,0 +1,509 @@
+{
+	// Place your snippets for vue-html here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"NativeScript Button" : {
+		"prefix": "nsbutton",
+		"body" : [
+			"<Button text=\"${ButtonText}\" @tap=\"${OnTapEventHandler}\" />"
+		]
+	},
+	"NativeScript Label" : {
+		"prefix": "nslabel" ,
+		"body" : [
+			"<Label text=\"${LabelText}\" />"
+		]
+	},
+	"NativeScript Image" : {
+		"prefix" : "nsimage",
+		"body" : [
+			"<Image src=\"${ImageUrl}\" />"
+		]
+	},
+	"NativeScript Slider" : {
+		"prefix" : "nsslider",
+		"body" : [
+			"<Slider value=\"${Value}\" />"
+		]
+	},
+	"NativeScript Switch" : {
+		"prefix" : "nsswitch",
+		"body" : [
+			"<Switch checked=\"${true}\" />"
+		]
+	},
+	"NativeScript TextView" : {
+		"prefix" : "nstextview",
+		"body" : [
+			"<TextView editable=\"${false}\">",
+				"\t<FormattedString>",
+					"\t\t<Span text=\"${SpanText}\" />",
+				"\t</FormattedString>",
+			"</TextView>"
+		]
+	},
+	"NativeScript ListView" : {
+		"prefix" : "nslistview",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<ListView class=\"list-group\" for=\"${ItemInArray} in ${ArrayOrCollection}\" @itemTap=\"${OnItemTapEventHandler}\" style=\"height:100%\">",
+				"\t<v-template>",
+				"\t\t<FlexboxLayout flexDirection=\"row\" class=\"list-group-item\">",
+					"\t\t\t<Image :src=\"${ItemInArray}.${ImageUrl}\" class=\"thumb img-circle\" />",
+					"\t\t\t<Label :text=\"${ItemInArray}.${LabelText}\" class=\"list-group-item-heading\" style=\"width: 60%\" />",
+				"\t\t</FlexboxLayout>",
+				"\t</v-template>",
+			"</ListView>"
+		]
+	},
+	"NativeScript Progress" : {
+		"prefix" : "nsprogress",
+		"body" : [
+			"<Progress :value=\"${Value}\" maxValue=\"${Max}\" />"
+		]
+	},
+	"NativeScript Activity Indicator" : {
+		"prefix" : "nsactivityindicator",
+		"body" : [
+			"<ActivityIndicator :busy=\"${isBusy}\" class=\"activity-indicator\" />"
+		]
+	},
+	"NativeScript TextField" : {
+		"prefix" : "nstextfield",
+		"body" : [
+			"<TextField v-model=\"${TextFieldValue}\" hint=\"${Hint}\" />"
+		]
+	},
+	"NativeScript TimePicker" : {
+		"prefix" : "nstimepicker",
+		"body" : [
+			"<TimePicker :hour=\"${CurrentHour}\" :minute=\"${CurrentMinute}\" />"
+		]
+	},
+	"NativeScript AutoComplete Text View" : {
+		"prefix" : "nsautocompletextview",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<StackLayout backgroundColor=\"${color}\" padding=\"5\">",
+				"\t<Label text=\"${LabelText}\" />",
+				"\t<RadAutoCompleteTextView :items=\"${autocompleteCountries}\" suggestMode=\"${Suggest}\" displayMode=\"${Tokens}\">",
+					"\t\t<SuggestionView ~suggestionView>",
+						"\t\t\t<StackLayout v-suggestionItemTemplate orientation=\"vertical\" padding=\"10\">",
+							"\t\t\t\t<v-template scope=\"${item}\">",
+								"\t\t\t\t\t<Label :text=\"${item}.${text}\" />",
+							"\t\t\t\t</v-template>",
+						"\t\t\t</StackLayout>",
+					"\t\t</SuggestionView>",
+				"\t</RadAutoCompleteTextView>",
+			"</StackLayout>",
+		]
+	},
+	"NativeScript ListPicker" : {
+		"prefix" : "nslistpicker",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<ListPicker :items=\"${listPickerCountries}\" v-model=\"${selectedListPickerIndex}\" />"
+		]
+	},
+	"NativeScript DatePicker" : {
+		"prefix" : "nsdatepicker",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<DatePicker :year=\"${currentYear}\" :month=\"${currentMonth}\" :day=\"${currentDay}\" minDate=\"${MinDate}\" maxDate=\"MaxDate\" />"
+		]
+	},
+	"NativeScript DataForm" : {
+		"prefix" : "nsdataform",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<RadDataForm :source=\"${album}\" />"
+		]
+	},
+	"NativeScript ActionBar" : {
+		"prefix" : "nsactionbar",
+		"body" : [
+			"<ActionBar title=\"${Title}\" class=\"action-bar\" />"
+		]
+	},
+	"NativeScript SegmentedBar" : {
+		"prefix" : "nssegmentedbar",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<SegmentedBar :items=\"${segmentedBarItems}\" v-model=\"${selectedBarIndex}\" />"
+		]
+	},
+	"NativeScript SearchBar" : {
+		"prefix" : "nssearchbar",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<SearchBar hint=\"${Hint}\" :text=\"${searchPhrase}\" @submit=\"${onSearchSubmit}\" />"
+		]
+	},
+	"NativeScript AreaChart" : {
+		"prefix" : "nsareachart",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"auto, *\" height=\"1000px\">",
+				"\t<Label row=\"0\" text=\"${ChartTitle}\" class=\"chart-example-tytle-style\" textWrap=\"true\" />",
+				"\t<RadCartesianChart row=\"1\" selectionMode=\"Single\">",
+					"\t\t<CategoricalAxis lineColor=\"#b0b0b0\" lineThickness=\"1\" v-tkCartesianHorizontalAxis />",
+					"\t\t<LinearAxis lineColor=\"#b0b0b0\" lineThickness=\"1\" v-tkCartesianVerticalAxis />",
+					"\t\t<AreaSeries seriesName=\"Area\" categoryProperty=\"Category\" :items=\"areaSource\" stackMode=\"Stack\" valueProperty=\"Amount\" selectionMode=\"Series\" v-tkCartesianSeries />",
+					"\t\t<AreaSeries seriesName=\"Area\" categoryProperty=\"Category\" :items=\"areaSource2\" stackMode=\"Stack\" valueProperty=\"Amount\" selectionMode=\"Series\" v-tkCartesianSeries />",
+					"\t\t<RadCartesianChartGrid horizontalLinesVisible=\"true\" verticalLinesVisible=\"false\" verticalStripLinesVisible=\"false\" horizontalStripLinesVisible=\"false\" horizontalStrokeColor=\"#e5e5e5\" v-tkCartesianGrid />",
+					"\t\t<Palette seriesName=\"Area\" v-tkCartesianPalette>",
+					"\t\t\t<PaletteEntry fillColor=\"#b2efe6\" strokeColor=\"#08caab\" strokeWidth=\"2\" />",
+					"\t\t\t<PaletteEntry fillColor=\"#b2d2d1\" strokeColor=\"#026968\" strokeWidth=\"2\" />",
+					"\t\t</Palette>",
+					"\t\t<Palette seriesName=\"Area\" seriesState=\"Selected\" v-tkCartesianPalette>",
+					"\t\t\t<PaletteEntry fillColor=\"#b2efe6\" strokeColor=\"#026555\" strokeWidth=\"2\" />",
+					"\t\t\t<PaletteEntry fillColor=\"#b2d2d1\" strokeColor=\"#003434\" strokeWidth=\"2\" />",
+					"\t\t</Palette>",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript BarChart" : {
+		"prefix" : "nsbarchart",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t<BarSeries v-tkCartesianSeries :items=\"${categoricalSource}\" categoryProperty=\"${Country}\" valueProperty=\"${Amount}\" />",
+					"\t\t<CategoricalAxis v-tkCartesianHorizontalAxis />",
+					"\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript LineChart" : {
+		"prefix" : "nslinechart",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"<RadCartesianChart row=\"0\">",
+					"<LineSeries v-tkCartesianSeries :items=\"${categoricalSource}\" categoryProperty=\"${Country}\" valueProperty=\"${Amount}\" />",
+					"<CategoricalAxis v-tkCartesianHorizontalAxis />",
+					"<LinearAxis v-tkCartesianVerticalAxis />",
+				"</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript BubbleChart" : {
+		"prefix" : "nsbubblechart",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t\t<BubbleSeries v-tkCartesianSeries bubbleScale=\"5\" categoryProperty=\"${year}\" valueProperty=\"${Amount}\" bubbleSizeProperty=\"Impact\" :items=\"${highDataModel}\" />",
+					"\t\t\t<BubbleSeries v-tkCartesianSeries bubbleScale=\"5\" categoryProperty=\"${year}\" valueProperty=\"${Amount}\" bubbleSizeProperty=\"Impact\" :items=\"${middleDataModel}\" />",
+					"\t\t\t<BubbleSeries v-tkCartesianSeries bubbleScale=\"5\" categoryProperty=\"${year}\" valueProperty=\"${Amount}\" bubbleSizeProperty=\"Impact\" :items=\"${lowDataModel}\" />",
+					"\t\t\t<CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation=\"Bottom\" labelFitMode=\"Rotate\" labelRotationAngle=\"1.2\" />",
+					"\t\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript CandleStick Chart" : {
+		"prefix" : "nscandlestick",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t<DateTimeCategoricalAxis v-tkCartesianHorizontalAxis dateFormat=\"yyyy-MM-dd\" verticalLocation=\"Bottom\" />",
+					"\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+					"\t\t<CandlestickSeries v-tkCartesianSeries categoryProperty=\"Date\" openPropertyName=\"Open\" highPropertyName=\"High\" lowPropertyName=\"Low\" closePropertyName=\"Close\" :items=\"${financialSourceItems}\" />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript OHLC Chart" : {
+		"prefix" : "nsohlc",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t<DateTimeCategoricalAxis v-tkCartesianHorizontalAxis dateFormat=\"yyyy-MM-dd\" verticalLocation=\"Bottom\" />",
+					"\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+					"\t\t<OhlcSeries v-tkCartesianSeries categoryProperty=\"Date\" openPropertyName=\"Open\" highPropertyName=\"High\" lowPropertyName=\"Low\" closePropertyName=\"Close\" :items=\"${financialSourceItems}\" />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Pie Chart" : {
+		"prefix" : "nspie",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadPieChart allowAnimation=\"true\" row=\"0\">",
+					"\t\t<PieSeries v-tkPieSeries selectionMode=\"DataPoint\" expandRadius=\"0.4\" outerRadiusFactor=\"0.7\" :items=\"${pieSource}\" valueProperty=\"Amount\" legendLabel=\"Brand\" />",
+					"\t\t<RadLegendView v-tkPieLegend position=\"Right\" title=\"Brands\" offsetOrigin=\"TopRight\" width=\"110\" enableSelection=\"true\" />",
+				"\t</RadPieChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Donut Chart" : {
+		"prefix" : "nsdonut",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadPieChart allowAnimation=\"true\" row=\"0\">",
+					"\t\t<DonutSeries v-tkPieSeries selectionMode=\"DataPoint\" expandRadius=\"0.4\" outerRadiusFactor=\"0.7\" innerRadiusFactor=\"0.4\" :items=\"${pieSource}\" valueProperty=\"Amount\" legendLabel=\"Brand\" />",
+					"\t\t<RadLegendView v-tkPieLegend position=\"Right\" title=\"Brands\" offsetOrigin=\"TopRight\" width=\"110\" enableSelection=\"true\" />",
+				"\t</RadPieChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Scatter Chart" : {
+		"prefix" : "nsscatter",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t<ScatterSeries v-tkCartesianSeries :items=\"${scatterSource}\" xProperty=\"Age\" yProperty=\"Salary\" />",
+					"\t\t<ScatterSeries v-tkCartesianSeries :items=\"${scatterSource}\" xProperty=\"Age\" yProperty=\"Spendings\" />",
+					"\t\t<ScatterSeries v-tkCartesianSeries :items=\"${scatterSource}\" xProperty=\"Age\" yProperty=\"Savings\" />",
+
+					"\t\t<LinearAxis v-tkCartesianHorizontalAxis />",
+					"\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Spline Chart" : {
+		"prefix" : "nsspline",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1000px\">",
+				"\t<RadCartesianChart row=\"0\">",
+					"\t\t<SplineSeries v-tkCartesianSeries :items=\"${categoricalSource}\" categoryProperty=\"Country\" valueProperty=\"Amount\" />",
+					"\t\t<CategoricalAxis v-tkCartesianHorizontalAxis />",
+					"\t\t<LinearAxis v-tkCartesianVerticalAxis />",
+				"\t</RadCartesianChart>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Gauge" : {
+		"prefix" : "nsgauge",
+		"body" : [
+			"<StackLayout height=\"500px\">",
+				"\t<RadRadialGauge>",
+					"\t\t<RadialScale v-tkRadialGaugeScales minimum=\"0\" maximum=\"6\" radius=\"0.90\">",
+					"\t\t<ScaleStyle v-tkRadialScaleStyle majorTicksCount=\"7\" minorTicksCount=\"9\" lineThickness=\"0\" labelsCount=\"7\" ticksOffset=\"0\" />",
+					"\t\t<RadialBarIndicator v-tkRadialScaleIndicators minimum=\"0\" maximum=\"1.2\" location=\"0.97\">",
+						"\t\t\t<BarIndicatorStyle v-tkRadialBarIndicatorStyle fillColor=\"#dddddd\" />",
+					"\t\t</RadialBarIndicator>",
+					"\t\t<RadialBarIndicator v-tkRadialScaleIndicators minimum=\"1.2\" maximum=\"2.4\" location=\"0.97\">",
+						"\t\t\t<BarIndicatorStyle v-tkRadialBarIndicatorStyle fillColor=\"#9DCA56\" />",
+					"\t\t</RadialBarIndicator>",
+					"\t\t<RadialBarIndicator v-tkRadialScaleIndicators minimum=\"2.4\" maximum=\"3.6\" location=\"0.97\">",
+						"\t\t\t<BarIndicatorStyle v-tkRadialBarIndicatorStyle fillColor=\"#F0C44D\" />",
+					"\t\t</RadialBarIndicator>",
+					"\t\t<RadialBarIndicator v-tkRadialScaleIndicators minimum=\"3.6\" maximum=\"4.8\" location=\"0.97\">",
+						"\t\t\t<BarIndicatorStyle v-tkRadialBarIndicatorStyle fillColor=\"#E27633\" />",
+					"\t\t</RadialBarIndicator>",
+					"\t\t<RadialBarIndicator v-tkRadialScaleIndicators minimum=\"4.8\" maximum=\"6\" location=\"0.97\">",
+						"\t\t\t<BarIndicatorStyle v-tkRadialBarIndicatorStyle fillColor=\"#A7010E\" />",
+					"\t\t</RadialBarIndicator>",
+					"\t\t<RadialNeedle v-tkRadialScaleIndicators :value=\"${gaugeValue}\" />",
+					"\t\t</RadialScale>",
+				"\t</RadRadialGauge>",
+			"</StackLayout>",
+		]
+	},
+	"NativeScript Absolute Layout" : {
+		"prefix" : "nsabsolutelayout",
+		"body" : [
+			"<AbsoluteLayout width=\"210\" height=\"210\" backgroundColor=\"lightgray\">",
+				"\t<Label text=\"10, 10\" left=\"10\" top=\"10\" width=\"90\" height=\"90\" backgroundColor=\"red\" />",
+				"\t<Label text=\"110, 10\" left=\"110\" top=\"10\" width=\"90\" height=\"90\" backgroundColor=\"green\" />",
+				"\t<Label text=\"110, 110\" left=\"110\" top=\"110\" width=\"90\" height=\"90\" backgroundColor=\"blue\" />",
+				"\t<Label text=\"10, 110\" left=\"10\" top=\"110\" width=\"90\" height=\"90\" backgroundColor=\"yellow\" />",
+			"</AbsoluteLayout>",
+		]
+	},
+	"NativeScript Dock Layout" : {
+		"prefix" : "nsdocklayout",
+		"body" : [
+			"<DockLayout width=\"210\" height=\"210\" backgroundColor=\"lightgray\" stretchLastChild=\"false\">",
+				"\t<Label text=\"left\" dock=\"left\" width=\"60\" backgroundColor=\"red\" />",
+				"\t<Label text=\"top\" dock=\"top\" height=\"60\" backgroundColor=\"green\" />",
+				"\t<Label text=\"right\" dock=\"right\" width=\"60\" backgroundColor=\"blue\" />",
+				"\t<Label text=\"bottom\" dock=\"bottom\" height=\"60\" backgroundColor=\"yellow\" />",
+			"</DockLayout>",
+		]
+	},
+	"NativeScript Grid Layout" : {
+		"prefix" : "nsgridlayout",
+		"body" : [
+			"<GridLayout columns=\"60, auto, *\" rows=\"60, auto, *\" width=\"230\" height=\"230\" backgroundColor=\"lightgray\">",
+				"\t<Label text=\"Label 1\" row=\"0\" col=\"0\" backgroundColor=\"red\" />",
+				"\t<Label text=\"Label 2\" row=\"0\" col=\"1\" colSpan=\"2\" backgroundColor=\"green\" />",
+				"\t<Label text=\"Label 3\" row=\"1\" col=\"0\" rowSpan=\"2\" backgroundColor=\"blue\" />",
+				"\t<Label text=\"Label 4\" row=\"1\" col=\"1\" backgroundColor=\"yellow\" />",
+				"\t<Label text=\"Label 5\" row=\"1\" col=\"2\" backgroundColor=\"orange\" />",
+				"\t<Label text=\"Label 6\" row=\"2\" col=\"1\" backgroundColor=\"pink\" />",
+				"\t<Label text=\"Label 7\" row=\"2\" col=\"2\" backgroundColor=\"purple\" />",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript Flexbox Layout" : {
+		"prefix" : "nsflexboxlayout",
+		"body" : [
+			"<FlexboxLayout height=\"22\" flexDirection=\"row-reverse\">",
+				"\t<Label text=\"1\" backgroundColor=\"#EEEEEE\" flexGrow=\"1\" />",
+				"\t<Label text=\"2\" backgroundColor=\"#DDDDDD\" flexGrow=\"2\" />",
+				"\t<Label text=\"3\" backgroundColor=\"#CCCCCC\" flexGrow=\"3\" />",
+				"\t<Label text=\"4\" backgroundColor=\"#BBBBBB\" flexGrow=\"4\" />",
+				"\t<Label text=\"5\" backgroundColor=\"#AAAAAA\" flexGrow=\"5\" />",
+				"\t<Label text=\"6\" backgroundColor=\"#999999\" flexGrow=\"6\" />",
+			"</FlexboxLayout>",
+		]
+	},
+	"NativeScript Stack Layout" : {
+		"prefix" : "nsstacklayout",
+		"body" : [
+			"<StackLayout orientation=\"vertical\" width=\"210\" height=\"210\" backgroundColor=\"lightgray\">",
+				"\t<Label text=\"Label 1\" width=\"70\" height=\"50\" backgroundColor=\"red\" />",
+				"\t<Label text=\"Label 2\" width=\"70\" height=\"50\" backgroundColor=\"green\" />",
+				"\t<Label text=\"Label 3\" width=\"70\" height=\"50\" backgroundColor=\"blue\" />",
+				"\t<Label text=\"Label 4\" width=\"70\" height=\"50\" backgroundColor=\"yellow\" />",
+			"</StackLayout>",
+		]
+	},
+	"NativeScript Wrap Layout" : {
+		"prefix" : "nswraplayout",
+		"body" : [
+			"<WrapLayout orientation=\"horizontal\" width=\"210\" height=\"210\" backgroundColor=\"lightgray\">",
+				"\t<Label text=\"Label 1\" width=\"70\" height=\"70\" backgroundColor=\"red\" />",
+				"\t<Label text=\"Label 2\" width=\"70\" height=\"70\" backgroundColor=\"green\" />",
+				"\t<Label text=\"Label 3\" width=\"70\" height=\"70\" backgroundColor=\"blue\" />",
+				"\t<Label text=\"Label 4\" width=\"70\" height=\"70\" backgroundColor=\"yellow\" />",
+			"</WrapLayout>",
+		]
+	},
+	"NativeScript Scroll View" : {
+		"prefix" : "nsscrollview",
+		"body" : [
+			"<ScrollView orientation=\"horizontal\">",
+				"\t<GridLayout class=\"m-15\" columns=\"auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto\">",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"0\" text=\"Title 1\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"1\" text=\"Title 2\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"2\" text=\"Title 3\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"3\" text=\"Title 4\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"4\" text=\"Title 5\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"5\" text=\"Title 6\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"6\" text=\"Title 7\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"7\" text=\"Title 8\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"8\" text=\"Title 9\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"9\" text=\"Title 10\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"10\" text=\"Title 11\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"11\" text=\"Title 12\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"12\" text=\"Title 13\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"13\" text=\"Title 14\" />",
+					"\t\t<Label width=\"60\" height=\"50\" class=\"h3 m-15\" col=\"14\" text=\"Title 15\" />",
+				"\t</GridLayout>",
+			"</ScrollView>",
+		]
+	},
+	"NativeScript Side Drawer" : {
+		"prefix" : "nssidedrawer",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<GridLayout rows=\"*\" height=\"1500px\">",
+				"\t<RadSideDrawer ref=\"drawer\">",
+					"\t\t<StackLayout ~drawerContent backgroundColor=\"gray\">",
+						"\t\t\t<StackLayout height=\"56\" style=\"text-align: center; vertical-align: center;\">",
+							"\t\t\t\t<Label text=\"Navigation Menu\" />",
+						"\t\t\t</StackLayout>",
+						"\t\t\t<StackLayout>",
+							"\t\t\t\t<Label text=\"Primary\" padding=\"10\" backgroundColor=\"lightgray\" />",
+							"\t\t\t\t<Label text=\"Social\" padding=\"10\" />",
+							"\t\t\t\t<Label text=\"Promotions\" padding=\"10\" />",
+							"\t\t\t\t<Label text=\"Labels\" padding=\"10\" backgroundColor=\"lightgray\" />",
+							"\t\t\t\t<Label text=\"Important\" padding=\"10\" />",
+							"\t\t\t\t<Label text=\"Starred\" padding=\"10\" />",
+							"\t\t\t\t<Label text=\"Sent Mail\" padding=\"10\" />",
+							"\t\t\t\t<Label text=\"Drafts\" padding=\"10\" />",
+						"\t\t\t</StackLayout>",
+						"\t\t\t<Label text=\"Close\" color=\"lightgray\" padding=\"10\" style=\"horizontal-align: center\" @tap=\"onCloseDrawerTap\" />",
+					"\t\t</StackLayout>",
+					"\t\t<StackLayout ~mainContent>",
+						"\t\t\t<Label :text=\"mainContentText\" textWrap=\"true\" fontSize=\"13\" padding=\"10\" />",
+						"\t\t\t<Button text=\"Open Drawer\" @tap=\"onOpenDrawerTap\" margin=\"10\" style=\"horizontal-align: left\" />",
+					"\t\t</StackLayout>",
+				"\t</RadSideDrawer>",
+			"</GridLayout>",
+		]
+	},
+	"NativeScript TabView" : {
+		"prefix" : "nstabview",
+		"body" : [
+			"<TabView height=\"300px\">",
+				"\t<TabViewItem title=\"Tab 1\">",
+					"\t\t<Label text=\"Label in Tab 1\" />",
+				"\t</TabViewItem>",
+				"\t<TabViewItem title=\"Tab 2\">",
+					"\t\t<Label text=\"Label in Tab 2\" />",
+				"\t</TabViewItem>",
+			"</TabView>",
+		]
+	},
+	"NativeScript Calendar" : {
+		"prefix" : "nscalendar",
+		"body" : [
+			"<RadCalendar height=\"1000px\" />",
+		]
+	},
+	"NativeScript HTML View" : {
+		"prefix" : "nshtmlview",
+		"body" : [
+			"<HtmlView :html=\"${htmlString}\" />",
+		]
+	},
+	"NativeScript Web View " : {
+		"prefix" : "nswebview",
+		"body" : [
+			"<WebView height=\"1200px\" src=\"${url}\" />"
+		]
+	},
+	"NativeScript Location" : {
+		"prefix" : "nslocation",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<StackLayout>",
+			"\t<Button text=\"Show location\" @tap=\"${enableLocationServices}\" :visibility=\"${currentGeoLocation}.latitude ? 'collapsed' : 'visible'\" />",
+			"\t<StackLayout :visibility=\"${currentGeoLocation}.latitude ? 'visible' : 'collapsed'\">",
+			"\t\t<Label :text=\"'Latitude: ' + ${currentGeoLocation}.latitude\" />",
+			"\t\t<Label :text=\"'Longitude: ' + ${currentGeoLocation}.longitude\" />",
+			"\t\t<Label :text=\"'Altitude: ' + ${currentGeoLocation}.altitude\" />",
+			"\t\t<Label :text=\"'Direction: ' + ${currentGeoLocation}.direction\" />",
+			"\t</StackLayout>",
+			"</StackLayout>",
+		]
+	},
+	"NativeScript Accelerometer" : {
+		"prefix" : "nsaccelerometer",
+		"body" : [
+			"<!--Requires Scripting-->",
+			"<StackLayout>",
+				"\t<Button text=\"Start Accelerometer\" @tap=\"startAccelerometer\" :visibility=\"accelerometerValues.x ? 'collapsed' : 'visible'\" />",
+				"\t<StackLayout :visibility=\"accelerometerValues.x ? 'visible' : 'collapsed'\">",
+					"\t\t<Label :text=\"'X: ' + accelerometerValues.x\" />",
+					"\t\t<Label :text=\"'Y: ' + accelerometerValues.y\" />",
+					"\t\t<Label :text=\"'Z: ' + accelerometerValues.z\" />",
+				"\t</StackLayout>",
+			"</StackLayout>",
+		]
+	},
+}
