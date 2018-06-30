@@ -346,14 +346,8 @@
 	"NativeScript Grid Layout" : {
 		"prefix" : "nsgridlayout",
 		"body" : [
-			"<GridLayout columns=\"60, auto, *\" rows=\"60, auto, *\" width=\"230\" height=\"230\" backgroundColor=\"lightgray\">",
-				"\t<Label text=\"Label 1\" row=\"0\" col=\"0\" backgroundColor=\"red\" />",
-				"\t<Label text=\"Label 2\" row=\"0\" col=\"1\" colSpan=\"2\" backgroundColor=\"green\" />",
-				"\t<Label text=\"Label 3\" row=\"1\" col=\"0\" rowSpan=\"2\" backgroundColor=\"blue\" />",
-				"\t<Label text=\"Label 4\" row=\"1\" col=\"1\" backgroundColor=\"yellow\" />",
-				"\t<Label text=\"Label 5\" row=\"1\" col=\"2\" backgroundColor=\"orange\" />",
-				"\t<Label text=\"Label 6\" row=\"2\" col=\"1\" backgroundColor=\"pink\" />",
-				"\t<Label text=\"Label 7\" row=\"2\" col=\"2\" backgroundColor=\"purple\" />",
+			"<GridLayout columns=\"*,*\" rows=\"auto\" width=\"100%\">",
+				"\t$1",
 			"</GridLayout>",
 		]
 	},
